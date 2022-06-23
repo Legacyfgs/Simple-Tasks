@@ -1,0 +1,55 @@
+//
+//  main.cpp
+//  HelloReduce
+//
+//  Created by Chairman on 2022/04/18.
+//  Copyright © 2022 Chairman. All rights reserved.
+//
+
+#include <iostream>
+
+using namespace std;
+
+long long gcd(long long a, long long b)
+{
+  if (a % b == 0)
+    return b;
+  if (b % a == 0)
+    return a;
+  if (a > b)
+    return gcd(a % b, b);
+  else
+    return gcd(a, b % a);
+}
+
+int reduce(long long &num, long long &denom)
+{
+    long long gcdFrac;
+    if ((gcdFrac = gcd(num, denom)) != 1)
+    {
+        num /= gcdFrac;
+        denom /= gcdFrac;
+        return 1;
+    }
+    else
+    {
+        return 0;
+    }
+}
+
+int main()
+{
+    long long num, denom;
+    cout << "Enter numerator: ";
+    cin >> num;
+    cout << "Enter denominator: ";
+    cin >> denom;
+    if (reduce(num, denom))
+    {
+        cout << "Reduced fraction is " << num << "/" << denom;
+    }
+    else
+    {
+        cout << "Fraction " << num << "/" << denom << " can not be reduced";
+    }
+}
