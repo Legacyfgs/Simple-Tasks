@@ -63,5 +63,5 @@ else
 
 echo $name. "\n", $grade . "\n";
 
-// by: Edgar Joao - 402001224.
+// by: Legacy FGS .
 ?>
