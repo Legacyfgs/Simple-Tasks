@@ -1,2 +1,2 @@
-# College-Project-
-Programs created during college career using PHP - HTML.
+# -Project-
+Programs created using PHP/ HTML.
